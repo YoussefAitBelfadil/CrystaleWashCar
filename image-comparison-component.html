@@ -1,0 +1,261 @@
+<template id="comparison-slider-template">
+  <style>
+    * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            text-align: center;
+        }
+
+        h1 {
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .subtitle {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+
+        .comparison-slider {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            cursor: ew-resize;
+            user-select: none;
+        }
+
+        .image-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .before-image, .after-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .after-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .after-image {
+            width: 200%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .slider-line {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 4px;
+            height: 100%;
+            background: white;
+            transform: translateX(-50%);
+            z-index: 10;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        }
+
+        .slider-handle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 50px;
+            height: 50px;
+            background: white;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            cursor: ew-resize;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            transition: transform 0.2s ease;
+        }
+
+        .slider-handle:hover {
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+
+        .slider-handle::before {
+            content: '';
+            width: 0;
+            height: 0;
+            border-left: 8px solid #333;
+            border-top: 6px solid transparent;
+            border-bottom: 6px solid transparent;
+            margin-right: 2px;
+        }
+
+        .slider-handle::after {
+            content: '';
+            width: 0;
+            height: 0;
+            border-right: 8px solid #333;
+            border-top: 6px solid transparent;
+            border-bottom: 6px solid transparent;
+            margin-left: 2px;
+        }
+
+        .label {
+            position: absolute;
+            top: 20px;
+            padding: 8px 16px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+            backdrop-filter: blur(10px);
+        }
+
+        .label-before {
+            left: 20px;
+        }
+
+        .label-after {
+            right: 20px;
+        }
+
+        .description {
+            margin-top: 30px;
+            color: white;
+            text-align: center;
+        }
+
+        .description h2 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .description p {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+            .comparison-slider {
+                height: 300px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .slider-handle {
+                width: 40px;
+                height: 40px;
+            }
+        }
+  </style>
+  <div class="container">
+    <h1>Car Cleaning Comparison</h1>
+    <p class="subtitle">Drag the slider to see the amazing transformation</p>
+
+    <div class="comparison-slider">
+      <div class="image-container">
+        <img src="images/slide/dd.jpg" alt="Before Image" class="before-image">
+        <div class="label label-before">Dirty</div>
+      </div>
+
+      <div class="after-container">
+        <img src="images/slide/dd.jpg" alt="After Image" class="after-image">
+        <div class="label label-after">Clean</div>
+      </div>
+
+      <div class="slider-line">
+        <div class="slider-handle"></div>
+      </div>
+    </div>
+
+    <div class="description">
+      <h2>Professional Car Detailing Service</h2>
+      <p>Experience the difference our premium cleaning service makes. From dirty to pristine in no time!</p>
+    </div>
+  </div>
+</template>
+
+<script>
+  class ComparisonSlider extends HTMLElement {
+    constructor() {
+      super();
+      const template = document.getElementById('comparison-slider-template');
+      const content = template.content.cloneNode(true);
+      this.attachShadow({ mode: 'open' }).appendChild(content);
+    }
+
+    connectedCallback() {
+      const container = this.shadowRoot.querySelector('.comparison-slider');
+      const afterContainer = this.shadowRoot.querySelector('.after-container');
+      const sliderLine = this.shadowRoot.querySelector('.slider-line');
+      const sliderHandle = this.shadowRoot.querySelector('.slider-handle');
+      const beforeImage = this.shadowRoot.querySelector('.before-image');
+      const afterImage = this.shadowRoot.querySelector('.after-image');
+
+      beforeImage.src = this.getAttribute('before') || '';
+      afterImage.src = this.getAttribute('after') || '';
+
+      let isDragging = false;
+
+      const updateSlider = (clientX) => {
+        const rect = container.getBoundingClientRect();
+        let pos = ((clientX - rect.left) / rect.width) * 100;
+        pos = Math.max(0, Math.min(100, pos));
+        afterContainer.style.width = `${pos}%`;
+        sliderLine.style.left = `${pos}%`;
+      };
+
+      const start = (e) => { isDragging = true; e.preventDefault(); };
+      const stop = () => { isDragging = false; };
+      const move = (e) => {
+        if (!isDragging) return;
+        updateSlider(e.touches ? e.touches[0].clientX : e.clientX);
+      };
+
+      sliderHandle.addEventListener('mousedown', start);
+      document.addEventListener('mousemove', move);
+      document.addEventListener('mouseup', stop);
+      sliderHandle.addEventListener('touchstart', start);
+      document.addEventListener('touchmove', move);
+      document.addEventListener('touchend', stop);
+      container.addEventListener('click', (e) => updateSlider(e.clientX));
+    }
+  }
+
+  customElements.define('comparison-slider', ComparisonSlider);
+</script>
+
+

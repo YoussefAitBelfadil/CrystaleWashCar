@@ -1,0 +1,515 @@
+* {
+    font-family: "League Spartan", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+}
+
+
+
+.fw-medium {
+    font-weight: 600;
+}
+
+.mt-6 {
+    margin-top: 5rem;
+}
+
+.mb-6 {
+    margin-bottom: 5rem;
+}
+
+.pt-6 {
+    padding-top: 5rem;
+}
+
+.pb-6 {
+    padding-bottom: 5rem;
+}
+
+
+/*** Spinner ***/
+#spinner {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5s ease-out, visibility 0s linear .5s;
+    z-index: 99999;
+}
+
+#spinner.show {
+    transition: opacity .5s ease-out, visibility 0s linear 0s;
+    visibility: visible;
+    opacity: 1;
+}
+
+
+/*** Button ***/
+.btn {
+    transition: .5s;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #74C0FC;
+}
+
+.btn-primary,
+.btn-outline-primary:hover {
+    color: var(--bs-light);
+}
+
+
+.btn-secondary,
+.btn-outline-secondary:hover {
+    color: var(--bs-dark);
+}
+
+.btn-square {
+    width: 38px;
+    height: 38px;
+    color:   #74C0FC;
+}
+
+.btn-sm-square {
+    width: 32px;
+    height: 32px;
+    color:   #74C0FC;
+}
+
+.btn-lg-square {
+    width: 48px;
+    height: 48px;
+    color:   #74C0FC;
+}
+
+.btn-xl-square {
+    width: 60px;
+    height: 60px;
+    color:   #74C0FC;
+}
+
+.btn-xxl-square {
+    width: 75px;
+    height: 75px;
+    color:   #74C0FC;
+}
+
+.btn-square,
+.btn-sm-square,
+.btn-lg-square,
+.btn-xl-square,
+.btn-xxl-square {
+    padding: 0;
+    display: flex;
+    color:   #74C0FC;
+    align-items: center;
+    justify-content: center;
+    font-weight: normal;
+}
+
+/*** Navbar ***/
+.sticky-top {
+    top: -100px;
+    transition: .5s;
+}
+
+.navbar .navbar-nav .nav-link {
+    margin-right: 35px;
+    padding: 25px 0;
+    color: var(--bs-dark);
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 600;
+    outline: none;
+}
+
+.navbar .navbar-nav .nav-link:hover,
+.navbar .navbar-nav .nav-link.active {
+    color: #74C0FC;
+}
+
+.navbar .dropdown-toggle::after {
+    border: none;
+    content: "\f107";
+    font-family: "League Spartan", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    vertical-align: middle;
+    margin-left: 8px;
+}
+
+
+@media (max-width: 991.98px) {
+    .navbar .navbar-nav .nav-link  {
+        margin-right: 0;
+        padding: 10px 0;
+    }
+
+    .navbar .navbar-nav {
+        margin-top: 15px;
+        border-top: 1px solid #EEEEEE;
+    }
+
+    #lolo{
+        display: none;
+    }
+}
+
+@media (min-width: 992px) {
+    .navbar .nav-item .dropdown-menu {
+        display: block;
+        border: none;
+        margin-top: 0;
+        top: 150%;
+        opacity: 0;
+        visibility: hidden;
+        transition: .5s;
+    }
+
+    .navbar .nav-item:hover .dropdown-menu {
+        top: 100%;
+        visibility: visible;
+        transition: .5s;
+        opacity: 1;
+    }
+     #navbarCollapse  {
+        margin-right: 0;
+        padding: 10px 0;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+    }
+}
+
+
+/*** Header ***/
+.carousel .carousel-caption {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    text-align: left;
+    background: rgba(0, 0, 0, .7);
+    padding: 3rem;
+    padding-left: 11rem;
+    z-index: 1;
+}
+
+.carousel .carousel-indicators {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: auto;
+    width: 80px;
+    flex-direction: column;
+    margin: 0;
+    margin-left: 3rem;
+}
+
+.carousel .carousel-indicators [data-bs-target] {
+    width: 70px;
+    height: 70px;
+    text-indent: 0;
+    margin: 5px 0;
+    border: 2px solid #FFFFFF;
+    overflow: hidden;
+}
+
+.carousel .carousel-indicators [data-bs-target] img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media (max-width: 992px) {
+    .carousel .carousel-item {
+        position: relative;
+        min-height: 600px;
+    }
+    
+    .carousel .carousel-item img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .carousel .carousel-indicators [data-bs-target] {
+        width: 60px;
+        height: 60px;
+    }
+
+    .carousel .carousel-caption {
+        padding-left: 10rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel .carousel-item {
+        min-height: 500px;
+    }
+
+    .carousel .carousel-indicators [data-bs-target] {
+        width: 50px;
+        height: 50px;
+    }
+
+    .carousel .carousel-caption {
+        padding-left: 9rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .carousel .carousel-item .display-1 {
+        font-size: 7rem;
+    }
+}
+
+
+
+/*** About ***/
+.about-img img{
+    position: relative;
+    border-radius: 18px;
+}
+
+
+.feature-item {
+    margin: 15px;
+    box-shadow: 0 0 45px rgba(53, 53, 53, 0.082);
+    border-radius: 18px;
+    transition: .5s;
+    font-family: "League Spartan", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+}
+
+.feature-icon {
+    position: relative;
+    transition: .5s;
+}
+
+.feature-item:hover .feature-icon {
+    margin-left: 2rem;
+}
+
+.experience .progress {
+    height: 5px;
+}
+
+.experience .progress .progress-bar {
+    width: 0px;
+    transition: 3s;
+}
+
+
+/*** Service ***/
+.service .service-item {
+    position: relative;
+    margin-top: 45px;
+}
+
+.service .service-inner {
+    position: relative;
+    height: 100%;
+    margin-top: 45px;
+    background: var(--bs-white);
+    box-shadow: 0 0 45px rgba(0, 0, 0, .05);
+}
+
+.service .service-inner::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 0;
+    left: 0;
+    bottom: 0;
+    transition: 1s;
+    background: var(--bs-primary);
+}
+
+.service .service-inner:hover::before {
+    height: 100%;
+    top: 0;
+}
+
+.service .service-item img {
+    margin-top: -45px;
+    padding-left: 45px;
+}
+
+.service .service-item * {
+    position: relative;
+    transition: .5s;
+    z-index: 1;
+}
+
+.service .service-item:hover h5,
+.service .service-item:hover p {
+    color: var(--bs-white);
+}
+
+.service .service-item:hover a {
+    padding-left: 45px !important;
+}
+
+
+/*** Appoinment ***/
+.appoinment {
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../img/carousel-2.jpg) left center no-repeat;
+    background-size: cover;
+}
+
+
+/*** Team ***/
+.team .team-item {
+    background: var(--bs-white);
+    box-shadow: 0 0 45px rgba(0, 0, 0, .05);
+}
+
+.team .team-item .team-social {
+    position: absolute;
+    width: 0;
+    height: 100%;
+    top: 0;
+    right: 0;
+    transition: .5s;
+    background: #74C0FC;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.team .team-item:hover .team-social {
+    width: 100%;
+    left: 0;
+}
+
+.team .team-item .team-social .btn {
+    opacity: 0;
+    transition: .5s;
+}
+
+.team .team-item:hover .team-social .btn {
+    opacity: 1;
+}
+
+/*** Footer ***/
+.footer .btn.btn-link {    
+    display: block;
+    margin-bottom: 5px;
+    padding: 0;
+    text-align: left;
+    color: var(--bs-secondary);
+    font-weight: normal;
+    text-transform: capitalize;
+    transition: .3s;
+}
+
+.footer .btn.btn-link i {
+    position: relative;
+    color: #74C0FC;
+    margin-right: 10px;
+}
+
+.footer .btn.btn-link:hover {
+    color: #74C0FC;
+    letter-spacing: 1px;
+    box-shadow: none;
+}
+
+.copyright {
+    background: #222222;
+}
+
+.copyright a {
+    color: var(--bs-white);
+}
+
+.copyright a:hover {
+    color: #74C0FC;
+}
+
+
+
+
+
+
+
+
+
+
+.profile-card-6 {
+  max-width: 400px;
+  background-color: #FFF;
+  border-radius: 5px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+  margin: 10px auto;
+  cursor: pointer;
+}
+
+.profile-card-6 img {
+  width: 100%;
+  transition: all 0.15s linear;
+}
+
+.profile-card-6 .profile-name {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 25px;
+  font-weight: bold;
+  color: #FFF;
+  padding: 15px 20px;
+  background: linear-gradient(140deg, rgba(0, 0, 0, 0.4) 50%, rgba(255, 255, 0, 0) 50%);
+  transition: all 0.15s linear;
+}
+
+.profile-card-6 .profile-position {
+  position: absolute;
+  color: rgba(255, 255, 255, 0.4);
+  left: 30px;
+  top: 100px;
+  transition: all 0.15s linear;
+}
+
+.profile-card-6 .profile-overview {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.4) 50%, rgba(255, 255, 0, 0));
+  color: #FFF;
+  padding: 50px 0 20px 0;
+  transition: all 0.15s linear;
+}
+
+.profile-card-6 .profile-overview h3 {
+  font-weight: bold;  
+  color: #FFF;
+}
+
+.profile-card-6 .profile-overview p {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.profile-card-6:hover img {
+  filter: brightness(80%);
+}
+
+.profile-card-6:hover .profile-name {
+  padding-left: 25px;
+  padding-top: 20px;
+}
+
+.profile-card-6:hover .profile-position {
+  left: 40px;
+}
+
+.profile-card-6:hover .profile-overview {
+  padding-bottom: 25px;
+}
+
