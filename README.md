@@ -40,7 +40,18 @@
 
 ## 📂 Project Structure
 
-<pre> ``` CrystalWashCar/ │ ├── public/ │ ├── 404.html │ ├── about.html │ ├── css/ │ ├── images/ │ ├── footer.js │ └── ... ├── firebase.json ├── .firebaserc ├── README.md └── .gitignore ``` </pre>
+<pre> ``` CrystalWashCar/ │
+  ├── public/ │
+  ├── 404.html │
+  ├── about.html │
+  ├── css/ │
+  ├── images/ │
+  ├── footer.js │
+  └── ...
+        ├── firebase.json
+        ├── .firebaserc
+        ├── README.md
+        └── .gitignore ``` </pre>
 
 
 ## 🚀 Getting Started
