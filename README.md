@@ -25,13 +25,13 @@
 
 ## 🖥️ Demo
 
-👉 [**Live Website**](https://yourdomain.com) *(Replace with your link)*
+👉 [**Live Website**](https://crystalwashcar-10ee9.web.app/) 
 
 ---
 
 ## 🧰 Tech Stack
 
-- 🔹 HTML5, CSS3, JavaScript  
+- 🔹 HTML5, CSS, JavaScript  
 - 🔹 Bootstrap 5  
 - 🔹 Firebase Hosting  
 - 🔹 Git & GitHub for version control
@@ -40,25 +40,8 @@
 
 ## 📂 Project Structure
 
-CrystalWashCar/
-│
-├── public/
-│ ├── 404.html
-│ ├── about.html
-│ ├── css/
-│ ├── images/
-│ ├── footer.js
-│ └── ...
-├── firebase.json
-├── .firebaserc
-├── README.md
-└── .gitignore
+<pre><code>```bash CrystalWashCar/ │ ├── public/ │ ├── 404.html │ ├── about.html │ ├── css/ │ ├── images/ │ ├── footer.js │ └── ... ├── firebase.json ├── .firebaserc ├── README.md └── .gitignore ```</code></pre>
 
-yaml
-Copy
-Edit
-
----
 
 ## 🚀 Getting Started
 
@@ -88,12 +71,3 @@ Edit
 
 ---
 
-### ✅ Instructions to use:
-
-1. Copy all the code above.
-2. Paste it into a file named `README.md` at your project root.
-3. Commit and push:
-```bash
-git add README.md
-git commit -m "Add styled README file"
-git push origin main
