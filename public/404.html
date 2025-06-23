@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>404 - Not Found</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito&family=Varela+Round&display=swap" rel="stylesheet" />
+  <style>
+    html, body {
+      height: 100vh;
+      margin: 0;
+      background: linear-gradient(#203075, #2b3d99);
+      overflow: hidden;
+      font-family: 'Varela Round', sans-serif;
+      color: #fff;
+    }
+
+    /* Center main with flex */
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    html::before, html::after,
+    body::before, body::after {
+      content: '';
+      position: absolute;
+      background: linear-gradient(#203075, #2b3d99);
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: -4;
+    }
+
+    html::before {
+      height: 105vmax;
+      width: 105vmax;
+      background: linear-gradient(#2b3d99, #203075);
+      z-index: -4;
+    }
+
+    html::after {
+      height: 80vmax;
+      width: 80vmax;
+      z-index: -3;
+    }
+
+    body::before {
+      height: 60vmax;
+      width: 60vmax;
+      z-index: -2;
+      background: linear-gradient(#203075, #2b3d99);
+    }
+
+    body::after {
+      height: 40vmax;
+      width: 40vmax;
+      z-index: -1;
+      background: linear-gradient(#203075, #2b3d99);
+    }
+
+    .main {
+      text-align: center;
+      z-index: 5;
+      padding: 20px;
+      max-width: 90vw;
+      box-sizing: border-box;
+    }
+
+    h1 {
+      font-size: 95px;
+      margin: 0;
+      text-shadow: 0 30px 10px rgba(0,0,0,0.15);
+    }
+
+    p {
+      font-size: 18px;
+      margin-top: 0;
+      text-shadow: 0 30px 10px rgba(0,0,0,0.15);
+    }
+
+    button {
+      background: linear-gradient(#74C0FC, #28a2ff);
+      padding: 10px 20px;
+      border: none;
+      border-radius: 20px;
+      box-shadow: 0 30px 15px rgba(0, 0, 0, 0.15);
+      color: #fff;
+      font: 400 16px/2.5 'Nunito', 'Varela Round', sans-serif;
+      text-transform: uppercase;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: background 0.3s ease;
+    }
+    button:hover {
+      background: linear-gradient(#28a2ff, #74C0FC);
+    }
+
+    /* Bubble base */
+    .bubble {
+      background: linear-gradient(#74C0FC, #28a2ff);
+      border-radius: 50%;
+      box-shadow: 0 30px 15px rgba(0, 0, 0, 0.15);
+      position: absolute;
+      z-index: 1;
+    }
+
+    .bubble-1 {
+      top: 15vh;
+      left: 15vw;
+      width: 22vmin;
+      height: 22vmin;
+    }
+
+    .bubble-1::before {
+      content: '';
+      position: absolute;
+      background: linear-gradient(#EC5DC1, #D61A6F);
+      width: 13vmin;
+      height: 13vmin;
+      bottom: -25vh;
+      right: -10vmin;
+      border-radius: 50%;
+      box-shadow: 0 30px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    .bubble-2 {
+      top: 20vh;
+      left: 38vw;
+      width: 10vmin;
+      height: 10vmin;
+    }
+
+    .bubble-2::before {
+      content: '';
+      position: absolute;
+      background: linear-gradient(#EC5DC1, #D61A6F);
+      width: 5vmin;
+      height: 5vmin;
+      bottom: -10vh;
+      left: -8vmin;
+      border-radius: 50%;
+      box-shadow: 0 30px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    .bubble-3 {
+      top: 12vh;
+      right: 30vw;
+      width: 13vmin;
+      height: 13vmin;
+    }
+
+    .bubble-3::before {
+      content: '';
+      position: absolute;
+      background: linear-gradient(#EC5DC1, #D61A6F);
+      width: 3vmin;
+      height: 3vmin;
+      bottom: -15vh;
+      left: -18vmin;
+      border-radius: 50%;
+      box-shadow: 0 30px 15px rgba(0, 0, 0, 0.15);
+      z-index: 6;
+    }
+
+    .bubble-4 {
+      top: 25vh;
+      right: 18vw;
+      width: 18vmin;
+      height: 18vmin;
+    }
+
+    .bubble-4::before {
+      content: '';
+      position: absolute;
+      background: linear-gradient(#EC5DC1, #D61A6F);
+      width: 7vmin;
+      height: 7vmin;
+      bottom: -10vmin;
+      left: -15vmin;
+      border-radius: 50%;
+      box-shadow: 0 30px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    .bubble-5 {
+      top: 60vh;
+      right: 18vw;
+      width: 28vmin;
+      height: 28vmin;
+    }
+
+    .bubble-5::before {
+      content: '';
+      position: absolute;
+      background: linear-gradient(#EC5DC1, #D61A6F);
+      width: 10vmin;
+      height: 10vmin;
+      bottom: 5vmin;
+      left: -25vmin;
+      border-radius: 50%;
+      box-shadow: 0 30px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Responsive styles */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 60px;
+      }
+      p {
+        font-size: 16px;
+      }
+      button {
+        font-size: 14px;
+        padding: 8px 16px;
+      }
+
+      .bubble-1 {
+        top: 10vh;
+        left: 10vw;
+        width: 16vmin;
+        height: 16vmin;
+      }
+      .bubble-1::before {
+        width: 9vmin;
+        height: 9vmin;
+        bottom: -15vh;
+        right: -7vmin;
+      }
+
+      .bubble-2 {
+        top: 15vh;
+        left: 30vw;
+        width: 8vmin;
+        height: 8vmin;
+      }
+      .bubble-2::before {
+        width: 4vmin;
+        height: 4vmin;
+        bottom: -8vh;
+        left: -5vmin;
+      }
+
+      .bubble-3 {
+        top: 10vh;
+        right: 20vw;
+        width: 9vmin;
+        height: 9vmin;
+      }
+      .bubble-3::before {
+        width: 2vmin;
+        height: 2vmin;
+        bottom: -10vh;
+        left: -10vmin;
+      }
+
+      .bubble-4 {
+        top: 18vh;
+        right: 12vw;
+        width: 12vmin;
+        height: 12vmin;
+      }
+      .bubble-4::before {
+        width: 5vmin;
+        height: 5vmin;
+        bottom: -7vmin;
+        left: -10vmin;
+      }
+
+      .bubble-5 {
+        top: 50vh;
+        right: 12vw;
+        width: 20vmin;
+        height: 20vmin;
+      }
+      .bubble-5::before {
+        width: 7vmin;
+        height: 7vmin;
+        bottom: 3vmin;
+        left: -15vmin;
+      }
+    }
+
+    @media (max-width: 400px) {
+      h1 {
+        font-size: 40px;
+      }
+      p {
+        font-size: 14px;
+      }
+      button {
+        font-size: 12px;
+        padding: 6px 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Bubbles -->
+  <div class="bubble bubble-1"></div>
+  <div class="bubble bubble-2"></div>
+  <div class="bubble bubble-3"></div>
+  <div class="bubble bubble-4"></div>
+  <div class="bubble bubble-5"></div>
+
+  <!-- Main Content -->
+  <div class="main">
+    <h1>404</h1>
+    <p>It looks like you're lost...<br />That's a trouble?</p>
+    <a href="index.html"><button>Go back</button></a>
+  </div>
+</body>
+</html>
