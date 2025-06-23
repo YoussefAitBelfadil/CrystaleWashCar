@@ -40,7 +40,7 @@
 
 ## 📂 Project Structure
 
-<pre><code>```bash CrystalWashCar/ │ ├── public/ │ ├── 404.html │ ├── about.html │ ├── css/ │ ├── images/ │ ├── footer.js │ └── ... ├── firebase.json ├── .firebaserc ├── README.md └── .gitignore ```</code></pre>
+<pre><code> CrystalWashCar/ │ ├── public/ │ ├── 404.html │ ├── about.html │ ├── css/ │ ├── images/ │ ├── footer.js │ └── ... ├── firebase.json ├── .firebaserc ├── README.md └── .gitignore </code></pre>
 
 
 ## 🚀 Getting Started
@@ -52,9 +52,6 @@ git clone https://github.com/YoussefAitBelfadil/CrystaleWashCar.git
 # Move into the project directory
 cd CrystaleWashCar
 
-# Open index.html in your browser (from public folder)
-📸 Screenshots
-(You can add image links here if you want to show UI previews)
 
 📄 License
 This project is licensed under the MIT License
@@ -65,9 +62,7 @@ Youssef Ait Belfadil
 
 ✨ Feel free to contribute or suggest improvements!
 
-yaml
-Copy
-Edit
+
 
 ---
 
