@@ -11,7 +11,7 @@ CrystalWashCar is a web platform for a car washing service that offers:
 
 ## 🌐 Live Demo
 
-[🔗 Visit the website](https://yourdomain.com) *(Replace with your real link)*
+[🔗 Visit the website](https://crystalwashcar-10ee9.web.app/) *(Replace with your real link)*
 
 ---
 
@@ -33,7 +33,7 @@ Edit
 
 ## 🛠️ Technologies Used
 
-- HTML5, CSS3, JS
+- HTML5, CSS, JS
 - Bootstrap
 - Firebase Hosting
 - Git & GitHub
@@ -45,23 +45,19 @@ Edit
 ```bash
 git clone https://github.com/YoussefAitBelfadil/CrystaleWashCar.git
 cd CrystaleWashCar
+
 # Open public/index.html in your browser
 📄 License
 This project is licensed under the MIT License.
 
 ✨ Author
 Youssef Ait Belfadil
-🔗 GitHub Profile
-
-yaml
-Copy
-Edit
-
 ---
 
 You can paste this in a file named `README.md` at the root of your project, then run:
 
 ```bash
+
 git add README.md
 git commit -m "Add README file"
 git push origin main
