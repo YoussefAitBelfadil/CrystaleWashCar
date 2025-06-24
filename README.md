@@ -63,7 +63,7 @@ git clone https://github.com/YoussefAitBelfadil/CrystaleWashCar.git
 ```bash
 # Move into the project directory
 cd CrystaleWashCar
-```bash
+```
 
 
 📄 License
