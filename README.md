@@ -59,9 +59,11 @@
 ```bash
 # Clone the repo
 git clone https://github.com/YoussefAitBelfadil/CrystaleWashCar.git
-
+```
+```bash
 # Move into the project directory
 cd CrystaleWashCar
+```bash
 
 
 📄 License
@@ -73,7 +75,4 @@ Youssef Ait Belfadil
 
 ✨ Feel free to contribute or suggest improvements!
 
-
-
----
 
